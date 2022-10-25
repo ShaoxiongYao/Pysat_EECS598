@@ -2,8 +2,10 @@ INPUT_FILE=$1
 UNROLLING_DEPTH=$2
 OUTPUT_FILE=$3
 
-./unroll_isc $INPUT_FILE ${OUTPUT_FILE}_temp.delete $UNROLLING_DEPTH
+DIRNAME="/home/yao/verf_hw_sw/Pysat_EECS598"
 
-./iscas2symcnf ${OUTPUT_FILE}_temp.delete $OUTPUT_FILE
+$DIRNAME/unroll_isc $INPUT_FILE ${OUTPUT_FILE}_temp.delete $UNROLLING_DEPTH
+
+$DIRNAME/iscas2symcnf ${OUTPUT_FILE}_temp.delete $OUTPUT_FILE
 
 rm *_temp.delete
